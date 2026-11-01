@@ -410,6 +410,10 @@ footer a.credit {
         display: none;
     }
 
+    .site-nav {
+        padding-top: 16px;
+    }
+
     .navbar-brand {
         position: static;
         transform: none;
