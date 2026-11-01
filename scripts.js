@@ -37,3 +37,16 @@
     });
     setOpen(false);
 })();
+
+// Photos below the first screen load lazily; fade each one in when it arrives.
+(function () {
+    document.querySelectorAll('img[loading="lazy"]').forEach(function (img) {
+        if (img.complete) return;
+        img.classList.add('is-pending');
+        var ready = function () {
+            img.classList.remove('is-pending');
+        };
+        img.addEventListener('load', ready, { once: true });
+        img.addEventListener('error', ready, { once: true });
+    });
+})();
